@@ -5,14 +5,21 @@ package com.myproject.BWM;
  */
 public class BwmFiveSeriesCarFrame implements CarFrame {
 
-    private final String emissions;
+    private String carGrade;
+    private int[] carBody;
+    private String carBodyStructure;
 
-    public BwmFiveSeriesCarFrame(String emissions){
-        this.emissions = emissions;
+    public BwmFiveSeriesCarFrame(String carGrade,int[] carBody,String carBodyStructure){
+
+        this.carGrade = carGrade;
+        this.carBody = carBody;
+        this.carBodyStructure = carBodyStructure;
     }
+
 
     @Override
     public void carFrameSelfChecking() {
-        System.out.println("this BWM Five Series Car, it's emissions is "+this.emissions);
+        System.out.println("this is "+this.carGrade+this.carBodyStructure+"BWM five series,length: "
+                +this.carBody[0]+"width: "+this.carBody[1]+"height: "+this.carBody[2]);
     }
 }
