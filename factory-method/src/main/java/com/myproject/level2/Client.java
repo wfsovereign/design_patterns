@@ -8,5 +8,8 @@ public class Client {
         ComputerEngineer computerEngineer = new ComputerEngineer();
         AbstractFactory af = new InterFactory();
         computerEngineer.makeComputer(af);
+        AbstractFactory bf = new AmdFactory();
+        computerEngineer.makeComputer(bf);
+
     }
 }

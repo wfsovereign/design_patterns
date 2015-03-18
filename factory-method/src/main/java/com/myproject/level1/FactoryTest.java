@@ -8,5 +8,9 @@ public class FactoryTest {
         Provider provider = new SendMailFactory();
         Sender sender = provider.produce();
         sender.Send();
+        Provider provider1 = new SendSmsFactory();
+        sender = provider1.produce();
+        sender.Send();
+
     }
 }
