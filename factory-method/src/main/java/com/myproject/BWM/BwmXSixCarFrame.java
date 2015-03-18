@@ -14,6 +14,7 @@ public class BwmXSixCarFrame implements CarFrame {
         this.carGrade = carGrade;
         this.carBody = carBody;
         this.carBodyStructure = carBodyStructure;
+        carFrameSelfChecking();
     }
 
     @Override
