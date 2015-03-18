@@ -12,6 +12,7 @@ public class BwmFIveSeriesGearbox implements Gearbox {
     }
     @Override
     public void gearboxSelfChecking() {
+        System.out.println("this is BWM Five Series gearbox,it's type of "+ this.gearType);
 
     }
 }

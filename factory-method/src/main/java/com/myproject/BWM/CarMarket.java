@@ -18,7 +18,6 @@ public class CarMarket {
         System.out.println("2.BWM X6");
         System.out.println("请输入您要买的车型编号：");
         String select = input.next();
-        System.out.println(select+"--------------");
         if (select.equals("1")) {
             CarFactory bFive = new BwmFiveSeriesFactory();
             provider.provideServerce(bFive);
