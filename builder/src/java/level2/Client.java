@@ -5,13 +5,13 @@ package level2;
  */
 public class Client {
     public static void main(String[]args){
-        InsuranceContract.ConcreteBuilder builder =
-                new InsuranceContract.ConcreteBuilder("9587", 2015, 2018);
-        InsuranceContract contract =
-                builder.setPersonName("FY").setOtherData("test").build();
+        EmploymentContract.ConcreteBuilder builder =
+                new EmploymentContract.ConcreteBuilder("9887", 2015, 2018);
+        EmploymentContract contract =
+                builder.setPersonName("FY").setOtherData("Employee").build();
         contract.someOperation();
-        builder = new InsuranceContract.ConcreteBuilder("9888",2015,2018);
-        contract = builder.setCompanyName("TW").setOtherData("test").build();
+        builder = new EmploymentContract.ConcreteBuilder("9888",2015,2018);
+        contract = builder.setCompanyName("TW").setOtherData("Employer").build();
         contract.someOperation();
     }
 }

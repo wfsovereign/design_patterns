@@ -3,7 +3,7 @@ package level2;
 /**
  * Created by wfsovereign on 15-3-19.
  */
-public class InsuranceContract {
+public class EmploymentContract {
     private String contractId;
     private String personName;
     private String companyName;
@@ -11,7 +11,7 @@ public class InsuranceContract {
     private long endDate;
     private String otherData;
 
-    private InsuranceContract(ConcreteBuilder builder) {
+    private EmploymentContract(ConcreteBuilder builder) {
         this.contractId = builder.contractId;
         this.personName = builder.personName;
         this.companyName = builder.companyName;
@@ -49,7 +49,7 @@ public class InsuranceContract {
             return this;
         }
 
-        public InsuranceContract build() {
+        public EmploymentContract build() {
             if (contractId == null || contractId.trim().length() == 0) {
                 throw new IllegalArgumentException("合同编号不能为空");
             }
@@ -70,7 +70,7 @@ public class InsuranceContract {
             if (endDate < beginDate) {
                 throw new IllegalArgumentException("一份保险合同的失效日期必须大于生效日期");
             }
-            return new InsuranceContract(this);
+            return new EmploymentContract(this);
         }
     }
 
