@@ -53,22 +53,19 @@ public class EmploymentContract {
             if (contractId == null || contractId.trim().length() == 0) {
                 throw new IllegalArgumentException("合同编号不能为空");
             }
-            boolean signPerson = (personName != null && personName.trim().length() > 0);
-            boolean signCompany = (companyName != null && companyName.trim().length() > 0);
+            boolean signPerson = (personName == null);
+            boolean signCompany = (companyName == null);
             if (signPerson && signCompany) {
-                throw new IllegalArgumentException("一份保险合同不能同时与个人和公司签订");
-            }
-            if (!signPerson && !signCompany) {
-                throw new IllegalArgumentException("一份保险合同不能没有签订对象");
+                throw new IllegalArgumentException("一份雇佣合同必须是个人和公司签订");
             }
             if (beginDate <= 0) {
-                throw new IllegalArgumentException("一份保险合同必须有开始生效的日期");
+                throw new IllegalArgumentException("一份雇佣合同必须有开始生效的日期");
             }
             if (endDate <= 0) {
-                throw new IllegalArgumentException("一份保险合同必须有失效的日期");
+                throw new IllegalArgumentException("一份雇佣合同必须有失效的日期");
             }
             if (endDate < beginDate) {
-                throw new IllegalArgumentException("一份保险合同的失效日期必须大于生效日期");
+                throw new IllegalArgumentException("一份雇佣合同的失效日期必须大于生效日期");
             }
             return new EmploymentContract(this);
         }
@@ -77,12 +74,9 @@ public class EmploymentContract {
     public void someOperation() {
         System.out.println("当前正在操作的保险合同编号为【" + this.contractId + "】");
 
-        if(this.personName != null && this.personName.trim().length()>0){
 
-            System.out.println("person name :" + this.personName);
-        }else {
-            System.out.println("company name :"+this.companyName);
-        }
+        System.out.println("person name :" + this.personName);
+        System.out.println("company name :" + this.companyName);
         System.out.println("begin data :" + this.beginDate);
         System.out.println("end data :" + this.endDate);
         System.out.println("other data :" + this.otherData);
