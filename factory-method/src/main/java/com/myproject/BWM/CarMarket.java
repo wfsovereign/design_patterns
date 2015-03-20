@@ -11,7 +11,7 @@ public class CarMarket {
         Provider provider = new Provider();
 
 
-       * Scanner input = new Scanner(System.in);
+       Scanner input = new Scanner(System.in);
         System.out.println("****欢迎来到阳光车行****");
         System.out.println("本车行现有如下两款车可供选购：");
         System.out.println("1.BWM Five Series");
