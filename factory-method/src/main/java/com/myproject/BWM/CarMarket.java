@@ -19,11 +19,11 @@ public class CarMarket {
         System.out.println("请输入您要买的车型编号：");
         String select = input.next();
         if (select.equals("1")) {
-            CarFactory bFive = new BwmFiveSeriesFactory();
-            provider.provideServerce(bFive);
+            CarFactory bwmFiveCar = new BwmFiveSeriesFactory();
+            provider.provideServerce(bwmFiveCar);
         } else if (select.equals("2")) {
-            CarFactory bXSix = new BwmXSixFactory();
-            provider.provideServerce(bXSix);
+            CarFactory bwmXSixCar = new BwmXSixFactory();
+            provider.provideServerce(bwmXSixCar);
         } else {
             System.out.println("输入错误，本次服务到此结束。");
             return;

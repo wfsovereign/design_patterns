@@ -6,10 +6,10 @@ package com.myproject.level2;
 public class Client {
     public static void main(String[] args) {
         ComputerEngineer computerEngineer = new ComputerEngineer();
-        AbstractFactory af = new InterFactory();
-        computerEngineer.makeComputer(af);
-        AbstractFactory bf = new AmdFactory();
-        computerEngineer.makeComputer(bf);
+        AbstractFactory interComponent = new InterFactory();
+        computerEngineer.makeComputer(interComponent);
+        AbstractFactory amdComponent = new AmdFactory();
+        computerEngineer.makeComputer(amdComponent);
 
     }
 }
