@@ -6,7 +6,7 @@ public class GreatestSageClient {
         TheGreatestSage sage = new Mokey();
 
         TheGreatestSage bird = new Bird(sage);
-        Fish fish = new Fish(bird);
+        TheGreatestSage fish = new Fish(bird);
 
         fish.move();
 
