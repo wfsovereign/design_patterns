@@ -1,4 +1,4 @@
-import com.myproject.level2.Mainboard;
+package bookstore_quote_system;
 
 /**
  * Created by wfsovereign on 15-3-21.

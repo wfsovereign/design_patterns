@@ -1,14 +1,21 @@
+package bookstore_quote_system;
+
 import java.util.Scanner;
 
 /**
  * Created by wfsovereign on 15-3-21.
  */
+
 public class BookStore {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
         double bookPrice;
         int memberLevel;
-        double payment;
+        double paymentQuota;
+        Price price;
+
+        Scanner input = new Scanner(System.in);
+
+
         System.out.println("welcome to my book store");
         System.out.println("下面是本店报价系统");
         System.out.println("请输入你购买书的金额：");
@@ -20,20 +27,23 @@ public class BookStore {
             case 1:
                 System.out.println("您是普通会员");
                 MemberStrategy primaryMember = new PrimaryMemberStrategy();
-                payment = primaryMember.calculatePrice(bookPrice);
-                printPaymentQuota(payment);
+                price = new Price(primaryMember);
+                paymentQuota = price.getPaymentQuota(bookPrice);
+                printPaymentQuota(paymentQuota);
                 break;
             case 2:
                 System.out.println("您是可爱的中级会员");
                 MemberStrategy intermediateMember = new IntermediateMemberStrategy();
-                payment = intermediateMember.calculatePrice(bookPrice);
-                printPaymentQuota(payment);
+                price = new Price(intermediateMember);
+                paymentQuota = price.getPaymentQuota(bookPrice);
+                printPaymentQuota(paymentQuota);
                 break;
             case 3:
                 System.out.println("您是尊贵的高级会员");
                 MemberStrategy advanceMember = new AdvanceMemberStrategy();
-                payment = advanceMember.calculatePrice(bookPrice);
-                printPaymentQuota(payment);
+                price = new Price(advanceMember);
+                paymentQuota = price.getPaymentQuota(bookPrice);
+                printPaymentQuota(paymentQuota);
                 break;
             default:
                 System.out.println("输入错误，本次服务到此结束，谢谢");
@@ -42,7 +52,7 @@ public class BookStore {
 
     }
 
-    public static void printPaymentQuota(double payment) {
-        System.out.println("您所需付款金额为："+payment);
+    public static void printPaymentQuota(double paymentQuota) {
+        System.out.println("您所需付款金额为："+paymentQuota);
     }
 }
