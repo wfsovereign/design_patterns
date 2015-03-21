@@ -39,8 +39,8 @@ public class BookStore {
                 break;
             case 3:
                 System.out.println("您是尊贵的高级会员");
-                MemberStrategy advanceMember = new AdvanceMemberStrategy();
-                price = new Price(advanceMember);
+                MemberStrategy advancedMember = new AdvancedMemberStrategy();
+                price = new Price(advancedMember);
                 price.getPaymentQuota(bookPrice);
                 price.printPaymentQuota();
                 break;
