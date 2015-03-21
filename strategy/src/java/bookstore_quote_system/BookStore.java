@@ -10,7 +10,6 @@ public class BookStore {
     public static void main(String[] args) {
         double bookPrice;
         int memberLevel;
-        double paymentQuota;
         Price price;
 
         Scanner input = new Scanner(System.in);
@@ -28,22 +27,22 @@ public class BookStore {
                 System.out.println("您是普通会员");
                 MemberStrategy primaryMember = new PrimaryMemberStrategy();
                 price = new Price(primaryMember);
-                paymentQuota = price.getPaymentQuota(bookPrice);
-                printPaymentQuota(paymentQuota);
+                price.getPaymentQuota(bookPrice);
+                price.printPaymentQuota();
                 break;
             case 2:
                 System.out.println("您是可爱的中级会员");
                 MemberStrategy intermediateMember = new IntermediateMemberStrategy();
                 price = new Price(intermediateMember);
-                paymentQuota = price.getPaymentQuota(bookPrice);
-                printPaymentQuota(paymentQuota);
+                price.getPaymentQuota(bookPrice);
+                price.printPaymentQuota();
                 break;
             case 3:
                 System.out.println("您是尊贵的高级会员");
                 MemberStrategy advanceMember = new AdvanceMemberStrategy();
                 price = new Price(advanceMember);
-                paymentQuota = price.getPaymentQuota(bookPrice);
-                printPaymentQuota(paymentQuota);
+                price.getPaymentQuota(bookPrice);
+                price.printPaymentQuota();
                 break;
             default:
                 System.out.println("输入错误，本次服务到此结束，谢谢");
@@ -52,7 +51,4 @@ public class BookStore {
 
     }
 
-    public static void printPaymentQuota(double paymentQuota) {
-        System.out.println("您所需付款金额为："+paymentQuota);
-    }
 }
