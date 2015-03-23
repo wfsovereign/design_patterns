@@ -3,7 +3,7 @@ package level1;
 /**
  * Created by wfsovereign on 15-3-23.
  */
-public class SimpleComposite {
+public class SimpleCompositeClient {
     public static void main(String[] args) {
         Composite clothesRoot = new Composite("服装");
         Composite manNode = new Composite("男装");

@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * Created by wfsovereign on 15-3-23.
  */
+
 public class Composite extends Component {
     @Override
     public void printStructure(String preStr) {
