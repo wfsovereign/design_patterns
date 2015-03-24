@@ -5,6 +5,8 @@ import java.util.Scanner;
 /**
  * Created by wfsovereign on 15-3-18.
  */
+
+
 public class CarMarket {
     public static void main(String[] args) {
 
