@@ -15,9 +15,9 @@ public class DynamicProxyClient {
         ClassLoader loader = realSubject.getClass().getClassLoader();
         Class<?>[] interfaces = realSubject.getClass().getInterfaces();
 
-        InvocationHandler handler = new DynamicProxy(realSubject);
+        InvocationHandler dynamicProxyHandler = new DynamicProxy(realSubject);
 
-        AbstractSubject proxy = (AbstractSubject) Proxy.newProxyInstance(loader, interfaces, handler);
+        AbstractSubject proxy = (AbstractSubject) Proxy.newProxyInstance(loader, interfaces, dynamicProxyHandler);
         /*
         * 返回的是Proxy的Class类
         * return sm != null && Proxy.ProxyAccessHelper.needsNewInstanceCheck(cl)?AccessController

@@ -8,16 +8,16 @@ import java.lang.reflect.Proxy;
 public class SignClient {
     public static void main(String[] args) {
         CEO ceo = new CEO();
-        Leader boss = new Assistant(ceo);
-        boss.sign();
+        Leader assistant = new Assistant(ceo);
+        assistant.sign();
 
 
         System.out.println("===================");
-        AssistantHandler assistant = new AssistantHandler(ceo);
+        AssistantHandler assistantHandler = new AssistantHandler(ceo);
 
-        Leader assistantProxy = (Leader) Proxy.newProxyInstance(Leader.class.getClassLoader(),
-                new Class[]{Leader.class},assistant);
-        assistantProxy.sign();
+        Leader proxy = (Leader) Proxy.newProxyInstance(Leader.class.getClassLoader(),
+                new Class[]{Leader.class},assistantHandler);
+        proxy.sign();
 
     }
 }
